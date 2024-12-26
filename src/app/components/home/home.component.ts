@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
   }
  
   openProjectModal(projectName: string): void {
-    const baseUrl = 'https://jere21121878.github.io/personalPortfolio/assets/';
+    const baseUrl = './Projects/assets/';
     const projects: Projects = {
       SafeOps: {
         name: "SafeOps",
@@ -73,10 +73,10 @@ export class HomeComponent implements OnInit {
         technologies: "Angular 15, ASP.NET Core, .NET 6, Entity Framework Core",
         category: "Management System.",
         description: "SafeOps is a management system designed for companies specializing in hygiene and safety. It enables efficient tracking of tasks, detailed reporting, and role-based access for different users. Built with Angular 15 for the front-end and an ASP.NET Core API with .NET 6 and Entity Framework Core for the back-end, the application delivers a robust and user-friendly platform for operational management.",    
-        thumbnail: { data: 'https://jere21121878.github.io/personalPortfolio/Projects/SafeOps/home.png', fileName: 'home.png' },
+        thumbnail: { data: './Projects/SafeOps/home.png', fileName: 'home.png' },
         photos: [
-           { data: '/Projects/SafeOps/login.png', fileName: 'login', description: 'It has a role-based authentication system,"administrador","licenciado" and "tecnico" ' },
-          { data: '/Projects/SafeOps/1.png', fileName: 'Administrator view', description: 'the administrator is in charge of creating the companies that require the hygiene and safety service.' },
+           { data: './Projects/SafeOps/login.png', fileName: 'login', description: 'It has a role-based authentication system,"administrador","licenciado" and "tecnico" ' },
+          { data: './Projects/SafeOps/1.png', fileName: 'Administrator view', description: 'the administrator is in charge of creating the companies that require the hygiene and safety service.' },
           { data: '/Projects/SafeOps/2.png', fileName: 'Administrator view', description: '' },
           { data: '/Projects/SafeOps/3.png', fileName: 'Administrator view', description: '' },
           { data: '/Projects/SafeOps/4.png', fileName: 'Administrator view', description: 'creating the employees of his company that will offer their service in the requesting company, assigning groups of technicians to the "licenciados"' },
@@ -92,8 +92,8 @@ export class HomeComponent implements OnInit {
           { data: '/Projects/SafeOps/24.png', fileName: 'Technicians in charge', description: '' },
           { data: '/Projects/SafeOps/25.png', fileName: 'View work view', description: 'Here the "licensee" can assign a task that will be carried out in the company and needs to be supervised by a technician, for example painting a wall.' },
           { data: '/Projects/SafeOps/26.png', fileName: 'Assign new task view', description: '' },
-          { data: '/Projects/SafeOps/27.png', fileName: 'Observations', description: 'The licensed professional can also add "observations" made to the technicians, for example if the licensed professional saw that the technician was on his cell phone while supervising a task or the workers did not have the required personal protection elements.' },
-          { data: '/Projects/SafeOps/28.png', fileName: 'Observations', description: '' },
+          { data: './Projects/SafeOps/27.png', fileName: 'Observations', description: 'The licensed professional can also add "observations" made to the technicians, for example if the licensed professional saw that the technician was on his cell phone while supervising a task or the workers did not have the required personal protection elements.' },
+          { data: './Projects/SafeOps/28.png', fileName: 'Observations', description: '' },
           { data: '/Projects/SafeOps/29.png', fileName: 'Observations view', description: '' },
           { data: '/Projects/SafeOps/33.png', fileName: 'View work view', description: 'if the task have an A.T.S made by the technician it would apper here' },
           { data: '/Projects/SafeOps/34.png', fileName: 'View work view', description: 'photos added by the techncian' },
@@ -137,19 +137,19 @@ export class HomeComponent implements OnInit {
     description: "Notes is a productivity application that allows users to create and manage notes efficiently. Users can archive notes, create categories, and associate categories with specific notes for better organization. Built with Angular 18 for the front-end and an ASP.NET Core API with .NET 8 and Entity Framework Core for the back-end, this application provides a seamless and intuitive note-taking experience.",
 
 
-        thumbnail: { data: '/Projects/Notes/1.png', fileName: 'about me.png' },
+        thumbnail: { data: './Projects/Notes/1.png', fileName: 'about me.png' },
         photos: [
-           { data: '/Projects/Notes/2.png', fileName: 'Dashboard', description: 'i use tokens to bring the list of notes and categories that belong to an user' },
-          { data: '/Projects/Notes/3.png', fileName: 'Add new note view', description: '' },
-          { data: '/Projects/Notes/4.png', fileName: 'Add new category view', description: '' },
+           { data: './Projects/Notes/2.png', fileName: 'Dashboard', description: 'i use tokens to bring the list of notes and categories that belong to an user' },
+          { data: './Projects/Notes/3.png', fileName: 'Add new note view', description: '' },
+          { data: './Projects/Notes/4.png', fileName: 'Add new category view', description: '' },
           { data: '/Projects/Notes/5.png', fileName: 'Add new note view', description: '' },
           { data: '/Projects/Notes/6.png', fileName: 'List of active notes', description: '' },
           { data: '/Projects/Notes/7.png', fileName: 'View note ', description: '' },
           { data: '/Projects/Notes/8.png', fileName: 'Edit note view', description: '' },
           { data: '/Projects/Notes/9.png', fileName: 'Edit note view', description: '' },
           { data: '/Projects/Notes/10.png', fileName: 'List of archived notes', description: '' },
-          { data: '/Projects/Notes/11.png', fileName: 'Front', description: '' },
-          { data: '/Projects/Notes/12.png', fileName: 'Front', description: '' },
+          { data: './Projects/Notes/11.png', fileName: 'Front', description: '' },
+          { data: './Projects/Notes/12.png', fileName: 'Front', description: '' },
           { data: '/Projects/Notes/13.png', fileName: 'Back', description: '' },
           { data: '/Projects/Notes/14.png', fileName: 'Back', description: '' },
           { data: '/Projects/Notes/15.png', fileName: 'Back', description: '' },
