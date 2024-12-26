@@ -178,18 +178,18 @@
     .nav-button:hover {
       background-color: rgba(0, 0, 0, 0.7);
     }
-    mat-chip {
-      background-color: yellow;
-      color: white;
-      font-weight: bold;
-      border: none;
-      border-radius: 16px; 
-      padding: 4px 12px;
-    }
-    
-    mat-chip:hover {
-      background-color: orange;
-          cursor: pointer;
-    }
-    
+    mat-chip { 
+        background-color: yellow;
+        color: white;
+        font-weight: bold;
+        border-radius: 0px;  
+        padding: 4px 12px;
+        border: 1px solid #ccc;
+      }
+      
+      mat-chip:hover {
+        background-color: orange;
+        cursor: pointer;
+      }
+      
     

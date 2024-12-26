@@ -629,8 +629,8 @@ li {
 .Contact__link{
 
    padding: 5px 10px;
-  background-color: rgba(6, 226, 255, 0.692); 
-  box-shadow: 0 0 15px 8px rgba(75, 236, 233, 0.6); 
+  background-color: rgba(236, 0, 0, 0.692); 
+  box-shadow: 0 0 15px 8px rgba(237, 0, 0, 0.6); 
   border-radius: 5px;
 
 }
