@@ -1,0 +1,162 @@
+<main>
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle Menu">
+      ☰
+    </button>
+  
+    <nav [class.open]="menuOpen"> <a href="#Home" (click)="navigateTo('Home')" [class.active]="activeSection === 'Home'">Home</a>
+       <a href="#About" (click)="navigateTo('About')" [class.active]="activeSection === 'About'">About Me</a> 
+       <a href="#Portfolio" (click)="navigateTo('Portfolio')" [class.active]="activeSection === 'Portfolio'">Portfolio</a> 
+       <a href="#Contact" (click)="navigateTo('Contact')" [class.active]="activeSection === 'Contact'">Contact</a>
+       <div class="animation start-home"></div> </nav>
+  
+    <section class="Hero">
+      <div class="Hero__mask"></div>
+  
+      <div class="Hero__content">
+        <ng-container [ngSwitch]="activeSection">
+          <div *ngSwitchCase="'Home'" class="home">
+            <h2 class="Hero__title">Jeremías Ángel Coronel Astrada</h2>
+            <p class="Hero__subtitle">I'm an Argentinian software developer!</p>
+            <button (click)="navigateTo('About')" class="learn-more-btn">Learn more about me!</button>
+  
+          </div>
+  
+          <div *ngSwitchCase="'About'" class="about">
+            <h2 class="Hero__title">About Me</h2>
+            <div class="info-table">
+              <div class="tabs">
+                <button (click)="selectTab('personal information')" [class.selected]="selectedTab === 'personal information'">Personal Information</button>
+                <button (click)="selectTab('education')" [class.selected]="selectedTab === 'education'">Education</button>
+                <button (click)="selectTab('skills')" [class.selected]="selectedTab === 'skills'">Skills</button>
+                <button (click)="selectTab('experience')" [class.selected]="selectedTab === 'experience'">Experience</button>
+              </div>
+  
+              <div class="content">
+                <div *ngIf="selectedTab === 'personal information'">
+                  <h3>Personal Information</h3>
+                  <p>
+                    I'm an Argentinian software developer, currently looking for my first
+                    experience in the IT world. I have a degree in software development from
+                    Instituto Superior Técnico Córdoba, and I've built web pages using
+                    ASP.NET Core, Angular, EF Core, and MySQL.
+                  </p>
+                </div>
+  
+                <div *ngIf="selectedTab === 'education'">
+                  <h3 class="section-title">Education</h3>
+                  <ul>
+                    <li>
+                      <span class="education-degree">Degree in Software Development:</span> at 
+                      <span class="education-institution">Instituto Superior Técnico Córdoba.</span>
+                      <span class="education-description">Learned full-stack development, project management, and software engineering principles.</span>
+                    </li>
+                  </ul>
+                </div>
+  
+                <div *ngIf="selectedTab === 'skills'">
+                  <h3 class="section-title">Skills</h3>
+                  <ul>
+                    <li>
+                      <span class="skill-category">Frontend Development:</span>
+                      <span class="skill-name">Angular</span>, I consider that I have an 
+                      <span class="skill-proficiency">Intermediate</span> level of understanding,
+                      <span class="skill-description">Experience with building dynamic web applications.</span>
+                    </li>
+                    <li>
+                      <span class="skill-category">Backend Development:</span>
+                      <span class="skill-name">ASP.NET Core</span>, I consider that I have an 
+                      <span class="skill-proficiency">Advanced</span> level of understanding,
+                      <span class="skill-description">Experience with creating RESTful APIs and server-side logic.</span>
+                    </li>
+                  </ul>
+                </div>
+  
+                <div *ngIf="selectedTab === 'experience'">
+                  <h3 class="section-title">Experience</h3>
+                  <ul>
+                    <li>
+                      <span class="experience-jobTitle">Software Development Intern</span> at 
+                      <span class="experience-company">Tech Company XYZ.</span>
+                      <span class="experience-description">Assisted in developing web applications, debugging code, and conducting testing.</span>
+                      I've started here in 
+                      <span class="experience-startDate">June 2020</span> and finished on 
+                      <span class="experience-endDate">December 2020</span>.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div *ngSwitchCase="'Portfolio'">
+            <h2 class="Hero1__title">Portfolio</h2>
+            <p class="Hero__subtitle">Check out some of my projects!</p>
+            <div class="Portfolio_container">
+              <div>
+                <div class="row">
+                  <div class="thumb-box">
+                    <a>
+                      <img src="./Projects/SafeOps/home.png" (click)="openProjectModal('SafeOps')" alt="Project Name">
+                      <span class="meta">Web Development</span>
+                        <span class="main-title">SafeOps</span>
+                        <span class="description">Description of the project and technologies used.</span>
+                     </a>
+                  </div>
+                  <div class="thumb-box">
+                    <a>
+                      <img src="../personalPortfolio/Projects/Portfolio/about me.png" (click)="openProjectModal('Portfolio')" alt="Project Name">
+                      <span class="overlay-box">
+                        <span class="meta">Web Development</span>
+                        <span class="main-title">Jere's portfolio</span>
+                        <span class="description">Description of the project and technologies used.</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="thumb-box">
+                    <a>
+                      <img src=" Projects/Ecommerce/8.png" (click)="openProjectModal('Ecommerce')" alt="Project Name">
+                      <span class="overlay-box">
+                        <span class="meta">Web Development</span>
+                        <span class="main-title">Jere's portfolio</span>
+                        <span class="description">Description of the project and technologies used.</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="thumb-box">
+                    <a>
+                      <img src=".assets//Projects/SafeOps/home.png" (click)="openProjectModal('Notes')" alt="Project Name">
+                      <span class="overlay-box">
+                        <span class="meta">Web Development</span>
+                        <span class="main-title">Notes</span>
+                        <span class="description">Description of the project and technologies used.</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div *ngSwitchCase="'Contact'">
+            <h2 class="Hero__title">Contact Me</h2>
+            <p class="Hero__subtitle">Get in touch for collaborations or inquiries.</p>
+            <div class="Contact__info">
+              <p class="Contact__text">You can reach me at:</p>
+              <a href="ds21tn.coronel.jeremias@gmail.com"  class="Contact__link">ds21tn.coronel.jeremias&#64;gmail.com
+                </a>
+              <p class="Contact__text">Or connect with me on LinkedIn:</p>
+              <a href="www.linkedin.com/in/jeremias-ángel-coronel-astrada-9388572a6 "
+               target="_blank" rel="noopener noreferrer" class="Contact__link">My LinkedIn Profile</a>
+            </div>          </div>
+  
+                </ng-container>
+      </div>
+  
+      <div class="Hero__image" id="Hero__image">
+       </div>
+  
+      <canvas id="snowfall" class="Hero__snowfall"></canvas>
+    </section>
+    <section class="Home"></section>
+  </main>
+  

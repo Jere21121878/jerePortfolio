@@ -1,0 +1,70 @@
+<div class="project-container">
+    <div class="details">
+      <ng-container *ngIf="selectedType === 'thumbnail'; else photoDetails">
+        <h2>{{ project.name }}</h2>
+        <p><strong>Description:</strong> {{ project.description }}</p>
+        <p><strong>Role:</strong> {{ project.role }}</p>
+        <p><strong>Features:</strong> {{ project.features }}</p>
+      
+        <p><strong>Technologies:</strong></p>
+         <mat-chip *ngFor="let tech of project.technologies.split(',')" selectable="true" removable="true">
+            {{ tech.trim() }}
+          </mat-chip>
+         
+        <p><strong>Category:</strong> {{ project.category }}</p>
+      </ng-container>
+      <ng-template #photoDetails>
+        <h2>{{ selectedImage?.fileName }}</h2>
+        <p>
+          <strong>Description:</strong>
+          <ng-container *ngIf="selectedImage?.description;">
+            {{ selectedImage.description }}
+          </ng-container>
+        </p>
+      </ng-template>
+    </div>
+    <button class="close-button" (click)="closeDialog()">
+      &times;
+    </button>
+  
+    <div class="gallery">
+  
+      <div class="thumbnail">
+        <div class="nav-buttons">
+          <button class="nav-button prev-button" (click)="prevImage()">&#9664;</button>
+          <img
+            [src]="selectedImage?.data"
+            [alt]="selectedImage?.fileName || 'Selected Image'"
+            class="main-image"
+          />
+          <button class="nav-button next-button" (click)="nextImage()">&#9654;</button>
+        </div>
+      </div>
+  
+      <div class="thumbnails">
+        <div
+          class="thumbnail-item"
+          [class.selected]="selectedImage === project.thumbnail"
+          (click)="selectImage(project.thumbnail, 'thumbnail')"
+        >
+          <img
+            [src]="project.thumbnail?.data"
+            [alt]="project.thumbnail?.fileName || 'Project Thumbnail'"
+          />
+        </div>
+  
+        <div
+          *ngFor="let photo of project.photos"
+          class="thumbnail-item"
+          [class.selected]="selectedImage === photo"
+          (click)="selectImage(photo, 'photo')"
+        >
+          <img
+            [src]="photo.data"
+            [alt]="photo.nombreFo || 'Project Photo'"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  

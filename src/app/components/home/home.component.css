@@ -1,0 +1,650 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:900|Roboto|Satisfy&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+::ng-deep .full-screen-dialog .mat-dialog-container {
+  width: 100vw !important; /* Forzar el ancho completo */
+  height: 100vh !important; /* Forzar el alto completo */
+  margin: 0 !important; /* Eliminar márgenes */
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  border-radius: 0 !important; /* Opcional: quitar bordes redondeados */
+  padding: 0; /* Opcional: eliminar padding interno */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Asegura que no haya scroll extraño */
+}
+body {
+  margin: 0;
+  background-color: #060431;
+  font-family: "Roboto", sans-serif;
+}
+ 
+ 
+/* Remover la altura fija y permitir crecimiento dinámico */
+.Hero {
+    position: relative; /* Asegura que .Hero__mask se ubique en el flujo del contenido */
+
+  color: white;
+   width: 100%;
+  min-height: 100vh; /* Altura mínima, pero permitiendo crecimiento */
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 2em; /* Espaciado superior */
+  padding-bottom: 2em; /* Espaciado inferior */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+.Hero__content {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrado horizontal */
+  justify-content: center; /* Centrado vertical */
+  padding: 2em; /* Espaciado adicional */
+  text-align: center;
+  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+  box-sizing: border-box; /* Para que padding no afecte el ancho */
+}
+
+
+
+.Hero__title {
+  font-family: "Imperial Script", cursive;
+  font-weight: 900;
+  color: rgb(255, 0, 0);
+  text-shadow: 0px 0px 8px rgb(0, 0, 0);
+  font-size: 3em;
+  line-height: 1em;
+  margin-bottom: 0.3em;
+  
+ }
+
+.Hero1__title {
+  font-family: "Imperial Script", cursive;
+  font-weight: 900;
+  color: rgb(255, 0, 0);
+  text-shadow: 0px 0px 8px rgb(0, 0, 0);
+  font-size: 3em;
+  line-height: 1em;
+  margin-bottom: 0.3em;
+ }
+
+.Hero__subtitle {
+  opacity: 0.85;
+  margin-top: 0.5em;
+  text-shadow: 0px 0px 8px black;
+  font-size: 1.5em;
+}
+
+ 
+
+@media (max-width: 700px) {
+  .Hero__content {
+    width: 90%;
+    padding: 1em;
+  }
+
+  .Hero__title {
+    font-size: 2.5em;
+  }
+
+  .Hero__subtitle {
+    font-size: 1.2em;
+  }
+
+  .Hero__action {
+    padding: 0.4em 1.5em;
+    font-size: 1em;
+  }
+}
+ 
+
+@media (max-height: 500px) {
+  .Hero__title {
+    font-size: 2em;
+  }
+
+  .Hero__subtitle {
+    font-size: 1em;
+  }
+
+  .Hero__action {
+    height: 1.4em;
+    border-radius: 1.4em;
+    width: 4.5em;
+  }
+
+  .Hero__actionText {
+    font-size: 0.9em;
+  }
+}
+
+.Hero__image {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  }
+
+.Hero__imageContent {
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Cambiado a cover o contain según lo que necesites */
+  object-position: center; /* Centra la imagen */
+}
+
+  
+
+.Hero__mask {
+  position: absolute;
+  z-index: -1;
+  height: 110%;
+  width: 100%;
+  background-image: linear-gradient(#180047, #060231 20%);
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+ }
+
+.Hero__snowfall {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: -6;
+  opacity: 0.75;
+}
+
+
+
+/* Estilos generales del menú */
+nav {
+  position: fixed;
+  top: 12%;
+  left: 55%;
+  transform: translateX(-50%);
+  width: 590px;
+  height: 50px;
+  background-color: rgba(252, 171, 8, 0.008);
+  border-radius: 8px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+/* Estilo para la sección activa */
+nav a.active {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(238, 7, 7, 0.688); /* Fondo celeste transparente */
+  box-shadow: 0 0 15px 8px rgba(249, 0, 0, 0.6); /* Humo celeste */
+  border-radius: 5px;}
+
+  
+
+  
+nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: white;
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  z-index: 1010;
+  cursor: pointer;
+}
+
+/* Responsive - Pantallas pequeñas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    transform: translateX(-100%);
+  }
+
+  nav.open {
+    transform: translateX(0);
+  }
+ /* Estilo general para los enlaces */
+nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: normal;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo para la sección activa */
+nav a.active {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(255, 0, 0, 0.696); /* Fondo celeste transparente */
+  box-shadow: 0 0 15px 8px rgba(255, 255, 255, 0.925); /* Humo celeste */
+  border-radius: 5px;}
+
+  
+
+ 
+
+  
+}
+.learn-more-btn {
+  background-color: #FFA500; /* Color amarillo anaranjado */
+  color: white; /* Texto blanco */
+  border: none;
+  padding: 12px 24px; /* Espaciado del botón */
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 30px; /* Bordes redondeados */
+  margin-top: 20px;
+  transition: background-color 0.3s ease; /* Transición suave para el color al pasar el mouse */
+  
+}
+
+.learn-more-btn:hover {
+  background-color: #FF8C00; /* Color más oscuro de amarillo anaranjado al pasar el mouse */
+}
+
+  
+ 
+.info-table {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se muevan en línea nueva */
+  margin-top: 20px;
+  min-height: 300px;
+ 
+  border: 3px solid;
+  border-image: linear-gradient(45deg, rgb(230, 230, 230), rgb(239, 238, 235), rgb(247, 247, 242)) 1;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* Pestañas y contenido */
+.tabs {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  border-right: 1px solid #ccc;
+  padding-right: 20px;
+}
+
+.tabs button {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tabs button:hover {
+  background-color: #f0f0f0;
+}
+
+.tabs button.selected {
+  background-color: white;
+  color: black;
+  border-color: #ccc;
+}
+
+.content {
+  padding-left: 20px;
+  flex: 1; /* Que ocupe el espacio restante */
+  min-width: 300px; /* Evita que se colapse en pantallas pequeñas */
+}
+
+.content h3 {
+  margin: 0 0 10px;
+}
+
+.content p {
+  margin: 0;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.custom-button {
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #b30a0ad1;
+}
+
+/* ----- Responsividad ----- */
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .info-table {
+    flex-direction: column; /* Las pestañas y contenido se apilan */
+    min-height: auto;
+  }
+
+  .tabs {
+    flex-direction: row; /* Pestañas en fila */
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    margin-right: 0;
+    padding-right: 0;
+    overflow-x: auto; /* Desplazamiento horizontal si hay muchas pestañas */
+  }
+
+  .tabs button {
+    margin-right: 10px;
+    white-space: nowrap; /* Evita que los botones se dividan en múltiples líneas */
+  }
+
+  .content {
+    padding: 10px 0; /* Ajuste de espaciado */
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .info-table {
+    padding: 5px;
+  }
+
+  .tabs {
+    flex-direction: column;
+    padding-right: 0;
+  }
+
+  .tabs button {
+    font-size: 14px; /* Reducción del tamaño del texto */
+    padding: 8px; /* Ajuste del padding */
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .custom-button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.Portfolio_container {
+  width: auto ;
+
+ margin-top: 3%;
+  padding: 20px;
+  border: 3px solid;
+
+  border-image: linear-gradient(45deg, rgb(230, 230, 230), rgb(239, 238, 235), rgb(247, 247, 242)) 1;
+  border-radius: 10px;
+ }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Espacio entre los elementos */
+}
+
+.thumb-box {
+  width: 48%; /* Ajusta para dos columnas */
+  position: relative;
+  margin-bottom: 20px; /* Espacio entre filas */
+  border: 3px solid rgba(161, 161, 161, 0.162); /* Bordes dorados */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.thumb-box:hover {
+  transform: scale(1.05);
+}
+
+.thumb-box img {
+  width: 100%;
+  height: 150px; /* Aumento de tamaño */
+  object-fit: cover;
+}
+
+.overlay-box {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+  color: #fdf5e6;
+}
+
+.meta {
+  font-size: 14px;
+  display: block;
+}
+
+.main-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 5px;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.description {
+  color: #d3d3d3;
+  font-size: 14px;
+  margin-top: 5px;
+  max-height: 0;
+  line-height: 18px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease-out, max-height 0.4s ease-out, margin 0.4s;
+}
+
+.thumb-box a:hover .description {
+  opacity: 1;
+  max-height: 100px;
+  margin-top: 5px;
+  transition: opacity 0.4s ease-out, max-height 0.9s ease-out;
+}
+
+.thumb-box a:hover .overlay-box {
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1));
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 600px) {
+  .thumb-box {
+    width: 100%; /* Una sola columna en dispositivos pequeños */
+  }
+}
+
+
+
+
+
+
+
+ 
+li {
+  margin-bottom: 25px;  
+ }
+
+/* Humo rojo para el nombre de la skill */
+.skill-name {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(255, 0, 0, 0.774); /* Fondo rojo transparente */
+  box-shadow: 0 0 15px 8px rgba(255, 0, 0, 0.742); /* Humo rojo */
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Humo amarillo para la categoría */
+.skill-category {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(255, 98, 0, 0.676); /* Fondo amarillo transparente */
+  box-shadow: 0 0 15px 8px rgba(255, 119, 0, 0.6); /* Humo amarillo */
+  border-radius: 5px;
+}
+
+/* Humo violeta para el nivel de competencia */
+.skill-proficiency {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(128, 0, 128, 0.657); /* Fondo violeta transparente */
+  box-shadow: 0 0 15px 8px rgba(128, 0, 128, 0.6); /* Humo violeta */
+  border-radius: 5px;
+}
+
+/* Humo celeste para la descripción */
+.skill-description {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(0, 191, 255, 0.692); /* Fondo celeste transparente */
+  box-shadow: 0 0 15px 8px rgba(0, 191, 255, 0.6); /* Humo celeste */
+  border-radius: 5px;
+}
+
+.education-description{
+
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(173, 18, 119, 0.692); /* Fondo celeste transparente */
+  box-shadow: 0 0 15px 8px rgba(255, 0, 242, 0.6); /* Humo celeste */
+  border-radius: 5px;
+
+}
+.education-degree{
+
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(184, 0, 46, 0.692); /* Fondo celeste transparente */
+  box-shadow: 0 0 15px 8px rgba(255, 0, 140, 0.6); /* Humo celeste */
+  border-radius: 5px;
+
+}
+.education-institution{
+
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(20, 34, 157, 0.692); /* Fondo celeste transparente */
+  box-shadow: 0 0 15px 8px rgba(18, 3, 129, 0.6); /* Humo celeste */
+  border-radius: 5px;
+
+}
+
+
+
+
+
+
+
+.section-title{
+
+ 
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: rgba(255, 0, 0, 0.692); /* Fondo celeste transparente */
+    box-shadow: 0 0 15px 8px rgba(241, 14, 10, 0.6); /* Humo celeste */
+    border-radius: 5px;
+  
+   
+}
+
+
+.experience-jobTitle{
+
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(221, 7, 200, 0.692); /* Fondo celeste transparente */
+  box-shadow: 0 0 15px 8px rgba(241, 56, 177, 0.6); /* Humo celeste */
+  border-radius: 5px;
+
+}
+.experience-company{
+
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(5, 222, 246, 0.692); /* Fondo celeste transparente */
+  box-shadow: 0 0 15px 8px rgba(244, 10, 154, 0.6); /* Humo celeste */
+  border-radius: 5px;
+
+}
+.experience-description{
+
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(107, 4, 57, 0.692); /* Fondo celeste transparente */
+  box-shadow: 0 0 15px 8px rgba(3, 222, 25, 0.6); /* Humo celeste */
+  border-radius: 5px;
+
+}
+.experience-startDate{
+
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(2, 204, 211, 0.692); /* Fondo celeste transparente */
+  box-shadow: 0 0 15px 8px rgba(71, 83, 218, 0.6); /* Humo celeste */
+  border-radius: 5px;
+
+}
+.experience-endDate{
+
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(178, 7, 221, 0.692); /* Fondo celeste transparente */
+  box-shadow: 0 0 15px 8px rgba(155, 56, 241, 0.6); /* Humo celeste */
+  border-radius: 5px;
+
+}
+.Contact__link{
+
+   padding: 5px 10px;
+  background-color: rgba(6, 226, 255, 0.692); /* Fondo celeste transparente */
+  box-shadow: 0 0 15px 8px rgba(75, 236, 233, 0.6); /* Humo celeste */
+  border-radius: 5px;
+
+}
