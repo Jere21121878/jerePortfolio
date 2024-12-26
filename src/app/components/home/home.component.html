@@ -17,7 +17,7 @@
           <div *ngSwitchCase="'Home'" class="home">
             <h2 class="Hero__title">Jeremías Ángel Coronel Astrada</h2>
             <p class="Hero__subtitle">I'm an Argentinian software developer!</p>
-            <button (click)="navigateTo('About')" class="learn-more-btn">Learn more about me!</button>
+            <button (click)="navigateTo('About')" class="learn-more-btn">Learn more about me</button>
   
           </div>
   
@@ -35,11 +35,12 @@
                 <div *ngIf="selectedTab === 'personal information'">
                   <h3>Personal Information</h3>
                   <p>
-                    I'm an Argentinian software developer, currently looking for my first
-                    experience in the IT world. I have a degree in software development from
-                    Instituto Superior Técnico Córdoba, and I've built web pages using
-                    ASP.NET Core, Angular, EF Core, and MySQL.
-                  </p>
+                    I'm an Argentinian software developer, passionate about continuous learning and innovation. 
+                    I define myself as a knowledge enthusiast, with a deep interest in both arts and sciences, 
+                    always seeking to broaden my horizons. My proactive and curious mindset drives me to tackle 
+                    challenges and adapt to new technologies. I'm currently looking for my first experience in 
+                    the IT world, where I can apply my skills, creativity, and commitment to contribute to impactful projects.
+                                </p>
                 </div>
   
                 <div *ngIf="selectedTab === 'education'">
@@ -50,6 +51,21 @@
                       <span class="education-institution">Instituto Superior Técnico Córdoba.</span>
                       <span class="education-description">Learned full-stack development, project management, and software engineering principles.</span>
                     </li>
+                    <li>
+                        <span class="education-degree">Argentina Programa:</span> at 
+                        <span class="education-institution">Ministerio de Desarrollo Productivo de la Nación.</span>
+                        <span class="education-description">Learned Basics of web development.</span>
+                      </li>
+                      <li>
+                        <span class="education-degree">Inglés B1.2:</span> at 
+                        <span class="education-institution">Ministerio de Educacion de la Nación.</span>
+                        <span class="education-description">Learned english oriented to the I.T world.</span>
+                      </li>
+                      <li>
+                        <span class="education-degree">Abogacia:</span> at 
+                        <span class="education-institution">Facultad de Derecho UNC.</span>
+                        <span class="education-description">Im still learning.</span>
+                      </li>
                   </ul>
                 </div>
   
@@ -65,7 +81,7 @@
                     <li>
                       <span class="skill-category">Backend Development:</span>
                       <span class="skill-name">ASP.NET Core</span>, I consider that I have an 
-                      <span class="skill-proficiency">Advanced</span> level of understanding,
+                      <span class="skill-proficiency">Intermediate</span> level of understanding,
                       <span class="skill-description">Experience with creating RESTful APIs and server-side logic.</span>
                     </li>
                   </ul>
@@ -75,13 +91,7 @@
                   <h3 class="section-title">Experience</h3>
                   <ul>
                     <li>
-                      <span class="experience-jobTitle">Software Development Intern</span> at 
-                      <span class="experience-company">Tech Company XYZ.</span>
-                      <span class="experience-description">Assisted in developing web applications, debugging code, and conducting testing.</span>
-                      I've started here in 
-                      <span class="experience-startDate">June 2020</span> and finished on 
-                      <span class="experience-endDate">December 2020</span>.
-                    </li>
+                     </li>
                   </ul>
                 </div>
               </div>
@@ -97,18 +107,18 @@
                   <div class="thumb-box">
                     <a>
                       <img src="./Projects/SafeOps/home.png" (click)="openProjectModal('SafeOps')" alt="Project Name">
-                      <span class="meta">Web Development</span>
+                      <span class="meta">Web page</span>
                         <span class="main-title">SafeOps</span>
-                        <span class="description">Description of the project and technologies used.</span>
+                        <span class="description">An web system management service for hygiene and security companies.</span>
                      </a>
                   </div>
                   <div class="thumb-box">
                     <a>
                       <img src="./Projects/Portfolio/about me.png" (click)="openProjectModal('Portfolio')" alt="Project Name">
                       <span class="overlay-box">
-                        <span class="meta">Web Development</span>
+                        <span class="meta">Web page</span>
                         <span class="main-title">Jere's portfolio</span>
-                        <span class="description">Description of the project and technologies used.</span>
+                        <span class="description">My personal Portfolio.</span>
                       </span>
                     </a>
                   </div>
@@ -116,19 +126,19 @@
                     <a>
                       <img src="./Projects/Ecommerce/8.png" (click)="openProjectModal('Ecommerce')" alt="Project Name">
                       <span class="overlay-box">
-                        <span class="meta">Web Development</span>
-                        <span class="main-title">Jere's portfolio</span>
-                        <span class="description">Description of the project and technologies used.</span>
+                        <span class="meta">Web page</span>
+                        <span class="main-title">World Virtual Gallery</span>
+                        <span class="description">An ecommerce.</span>
                       </span>
                     </a>
                   </div>
                   <div class="thumb-box">
                     <a>
-                      <img src="./Projects/SafeOps/home.png" (click)="openProjectModal('Notes')" alt="Project Name">
+                      <img src="./Projects/Notes/1.png" (click)="openProjectModal('Notes')" alt="Project Name">
                       <span class="overlay-box">
-                        <span class="meta">Web Development</span>
+                        <span class="meta">Web page</span>
                         <span class="main-title">Notes</span>
-                        <span class="description">Description of the project and technologies used.</span>
+                        <span class="description">Web app to make notes.</span>
                       </span>
                     </a>
                   </div>
@@ -153,6 +163,8 @@
       </div>
   
       <div class="Hero__image" id="Hero__image">
+        <img src="e.JPG" alt="Hero">
+
        </div>
   
       <canvas id="snowfall" class="Hero__snowfall"></canvas>
