@@ -13,18 +13,17 @@ import { SharedModule } from '../../../shared/shared.module';
   imports: [SharedModule,MatChipsModule,MatButtonModule],
 })
 export class ViewProjectComponent {
-  hoveredPhoto: any = null; // Foto actual sobre la que se está pasando el mouse
-  selectedImage: any = null; // Imagen actualmente seleccionada
-  selectedType: 'thumbnail' | 'photo' = 'thumbnail'; // Tipo de imagen seleccionada
+  hoveredPhoto: any = null; 
+  selectedImage: any = null; 
+  selectedType: 'thumbnail' | 'photo' = 'thumbnail'; 
   @ViewChild('fileInput') fileInput!: ElementRef;
-  showDescriptionInput: boolean = false; // Controla la visibilidad del input
-  newDescription: string = ''; // Almacena la nueva descripción
+  showDescriptionInput: boolean = false; 
+  newDescription: string = ''; 
 
   constructor(
     public dialogRef: MatDialogRef<ViewProjectComponent>,
     @Inject(MAT_DIALOG_DATA) public project: Project,
    ) {
-    // Inicializar la imagen seleccionada con el thumbnail
     this.selectedImage = project.thumbnail;
   }
 
@@ -51,9 +50,8 @@ export class ViewProjectComponent {
       } else {
         this.selectedImage = this.project.photos[this.project.photos.length - 1];
       }
-      // Asegurarse de que el tipo se actualiza
       this.selectedType = 'photo';
-      this.showDescriptionInput = false; // Ocultar el input al cambiar la imagen
+      this.showDescriptionInput = false; 
     }
   }
   
@@ -65,9 +63,8 @@ export class ViewProjectComponent {
       } else {
         this.selectedImage = this.project.photos[0];
       }
-      // Asegurarse de que el tipo se actualiza
       this.selectedType = 'photo';
-      this.showDescriptionInput = false; // Ocultar el input al cambiar la imagen
+      this.showDescriptionInput = false; 
     }
   }
   

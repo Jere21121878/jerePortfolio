@@ -223,7 +223,6 @@ export class HomeComponent implements OnInit {
       },
     };
 
-    // Ensure that projectName is a valid key in the projects object
     const project = projects[projectName as keyof Projects];
 
     if (project) {

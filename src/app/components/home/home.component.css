@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Heebo:900|Roboto|Satisfy&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
 ::ng-deep .full-screen-dialog .mat-dialog-container {
-  width: 100vw !important; /* Forzar el ancho completo */
-  height: 100vh !important; /* Forzar el alto completo */
-  margin: 0 !important; /* Eliminar márgenes */
+  width: 100vw !important; 
+  height: 100vh !important; 
+  margin: 0 !important; 
   max-width: 100vw !important;
   max-height: 100vh !important;
-  border-radius: 0 !important; /* Opcional: quitar bordes redondeados */
-  padding: 0; /* Opcional: eliminar padding interno */
+  border-radius: 0 !important; 
+  padding: 0; 
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Asegura que no haya scroll extraño */
+  overflow: hidden;
 }
 body {
   margin: 0;
@@ -19,31 +19,30 @@ body {
 }
  
  
-/* Remover la altura fija y permitir crecimiento dinámico */
 .Hero {
-    position: relative; /* Asegura que .Hero__mask se ubique en el flujo del contenido */
+    position: relative; 
 
   color: white;
    width: 100%;
-  min-height: 100vh; /* Altura mínima, pero permitiendo crecimiento */
+  min-height: 100vh; 
   display: flex;
   justify-content: center;
   overflow: hidden;
-  padding-top: 2em; /* Espaciado superior */
-  padding-bottom: 2em; /* Espaciado inferior */
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  padding-top: 2em; 
+  padding-bottom: 2em; 
+  box-sizing: border-box; 
 }
 
 .Hero__content {
   
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrado horizontal */
-  justify-content: center; /* Centrado vertical */
-  padding: 2em; /* Espaciado adicional */
+  align-items: center; 
+  justify-content: center; 
+  padding: 2em;
   text-align: center;
-  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
-  box-sizing: border-box; /* Para que padding no afecte el ancho */
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
 
@@ -131,8 +130,8 @@ body {
   position:fixed;
   width: 100%;
   height: 100%;
-  object-fit: fill; /* Cambiado a cover o contain según lo que necesites */
-  object-position: center; /* Centra la imagen */
+  object-fit: fill; 
+  object-position: center; 
 }
 
   
@@ -157,7 +156,6 @@ body {
 
 
 
-/* Estilos generales del menú */
 nav {
   position: fixed;
   top: 12%;
@@ -173,12 +171,11 @@ nav {
   align-items: center;
   transition: transform 0.3s ease;
 }
-/* Estilo para la sección activa */
 nav a.active {
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(238, 7, 7, 0.688); /* Fondo celeste transparente */
-  box-shadow: 0 0 15px 8px rgba(249, 0, 0, 0.6); /* Humo celeste */
+  background-color: rgba(238, 7, 7, 0.688);
+  box-shadow: 0 0 15px 8px rgba(249, 0, 0, 0.6); 
   border-radius: 5px;}
 
   
@@ -226,8 +223,8 @@ nav a {
   nav.open {
     transform: translateX(0);
   }
- /* Estilo general para los enlaces */
-nav a {
+
+  nav a {
   color: #333;
   text-decoration: none;
   padding: 10px;
@@ -235,12 +232,12 @@ nav a {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Estilo para la sección activa */
+
 nav a.active {
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(255, 0, 0, 0.696); /* Fondo celeste transparente */
-  box-shadow: 0 0 15px 8px rgba(255, 255, 255, 0.925); /* Humo celeste */
+  background-color: rgba(255, 0, 0, 0.696); 
+  box-shadow: 0 0 15px 8px rgba(255, 255, 255, 0.925);
   border-radius: 5px;}
 
   
@@ -250,28 +247,28 @@ nav a.active {
   
 }
 .learn-more-btn {
-  background-color: #FFA500; /* Color amarillo anaranjado */
-  color: white; /* Texto blanco */
+  background-color: #FFA500; 
+  color: white; 
   border: none;
-  padding: 12px 24px; /* Espaciado del botón */
+  padding: 12px 24px; 
   text-align: center;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 30px; /* Bordes redondeados */
+  border-radius: 30px; 
   margin-top: 20px;
-  transition: background-color 0.3s ease; /* Transición suave para el color al pasar el mouse */
+  transition: background-color 0.3s ease; 
   
 }
 
 .learn-more-btn:hover {
-  background-color: #FF8C00; /* Color más oscuro de amarillo anaranjado al pasar el mouse */
+  background-color: #FF8C00; 
 }
 
   
  
 .info-table {
   display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se muevan en línea nueva */
+  flex-wrap: wrap; 
   margin-top: 20px;
   min-height: 300px;
  
@@ -281,7 +278,6 @@ nav a.active {
   padding: 10px;
 }
 
-/* Pestañas y contenido */
 .tabs {
   display: flex;
   flex-direction: column;
@@ -314,8 +310,8 @@ nav a.active {
 
 .content {
   padding-left: 20px;
-  flex: 1; /* Que ocupe el espacio restante */
-  min-width: 300px; /* Evita que se colapse en pantallas pequeñas */
+  flex: 1; 
+  min-width: 300px; 
 }
 
 .content h3 {
@@ -345,35 +341,31 @@ nav a.active {
   background-color: #b30a0ad1;
 }
 
-/* ----- Responsividad ----- */
-
-/* Pantallas medianas (tablets) */
 @media (max-width: 768px) {
   .info-table {
-    flex-direction: column; /* Las pestañas y contenido se apilan */
+    flex-direction: column; 
     min-height: auto;
   }
 
   .tabs {
-    flex-direction: row; /* Pestañas en fila */
+    flex-direction: row; 
     border-right: none;
     border-bottom: 1px solid #ccc;
     margin-right: 0;
     padding-right: 0;
-    overflow-x: auto; /* Desplazamiento horizontal si hay muchas pestañas */
+    overflow-x: auto; 
   }
 
   .tabs button {
     margin-right: 10px;
-    white-space: nowrap; /* Evita que los botones se dividan en múltiples líneas */
+    white-space: nowrap; 
   }
 
   .content {
-    padding: 10px 0; /* Ajuste de espaciado */
+    padding: 10px 0; 
   }
 }
 
-/* Pantallas pequeñas (móviles) */
 @media (max-width: 480px) {
   .info-table {
     padding: 5px;
@@ -385,8 +377,8 @@ nav a.active {
   }
 
   .tabs button {
-    font-size: 14px; /* Reducción del tamaño del texto */
-    padding: 8px; /* Ajuste del padding */
+    font-size: 14px; 
+    padding: 8px;
   }
 
   .content {
@@ -426,14 +418,14 @@ a {
 .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Espacio entre los elementos */
+  justify-content: space-between; 
 }
 
 .thumb-box {
-  width: 48%; /* Ajusta para dos columnas */
+  width: 48%; 
   position: relative;
-  margin-bottom: 20px; /* Espacio entre filas */
-  border: 3px solid rgba(161, 161, 161, 0.162); /* Bordes dorados */
+  margin-bottom: 20px; 
+  border: 3px solid rgba(161, 161, 161, 0.162); 
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -446,7 +438,7 @@ a {
 
 .thumb-box img {
   width: 100%;
-  height: 150px; /* Aumento de tamaño */
+  height: 150px;
   object-fit: cover;
 }
 
@@ -493,10 +485,9 @@ a {
   background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1));
 }
 
-/* Ajustes responsivos para pantallas pequeñas */
 @media (max-width: 600px) {
   .thumb-box {
-    width: 100%; /* Una sola columna en dispositivos pequeños */
+    width: 100%; 
   }
 }
 
@@ -511,40 +502,36 @@ li {
   margin-bottom: 25px;  
  }
 
-/* Humo rojo para el nombre de la skill */
 .skill-name {
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(255, 0, 0, 0.774); /* Fondo rojo transparente */
-  box-shadow: 0 0 15px 8px rgba(255, 0, 0, 0.742); /* Humo rojo */
+  background-color: rgba(255, 0, 0, 0.774); 
+  box-shadow: 0 0 15px 8px rgba(255, 0, 0, 0.742); 
   border-radius: 5px;
   font-weight: bold;
 }
 
-/* Humo amarillo para la categoría */
 .skill-category {
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(255, 98, 0, 0.676); /* Fondo amarillo transparente */
-  box-shadow: 0 0 15px 8px rgba(255, 119, 0, 0.6); /* Humo amarillo */
+  background-color: rgba(255, 98, 0, 0.676); 
+  box-shadow: 0 0 15px 8px rgba(255, 119, 0, 0.6); 
   border-radius: 5px;
 }
 
-/* Humo violeta para el nivel de competencia */
 .skill-proficiency {
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(128, 0, 128, 0.657); /* Fondo violeta transparente */
-  box-shadow: 0 0 15px 8px rgba(128, 0, 128, 0.6); /* Humo violeta */
+  background-color: rgba(128, 0, 128, 0.657); 
+  box-shadow: 0 0 15px 8px rgba(128, 0, 128, 0.6); 
   border-radius: 5px;
 }
 
-/* Humo celeste para la descripción */
 .skill-description {
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(0, 191, 255, 0.692); /* Fondo celeste transparente */
-  box-shadow: 0 0 15px 8px rgba(0, 191, 255, 0.6); /* Humo celeste */
+  background-color: rgba(0, 191, 255, 0.692); 
+  box-shadow: 0 0 15px 8px rgba(0, 191, 255, 0.6); 
   border-radius: 5px;
 }
 
@@ -552,8 +539,8 @@ li {
 
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(173, 18, 119, 0.692); /* Fondo celeste transparente */
-  box-shadow: 0 0 15px 8px rgba(255, 0, 242, 0.6); /* Humo celeste */
+  background-color: rgba(173, 18, 119, 0.692); 
+  box-shadow: 0 0 15px 8px rgba(255, 0, 242, 0.6); 
   border-radius: 5px;
 
 }
@@ -561,8 +548,8 @@ li {
 
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(184, 0, 46, 0.692); /* Fondo celeste transparente */
-  box-shadow: 0 0 15px 8px rgba(255, 0, 140, 0.6); /* Humo celeste */
+  background-color: rgba(184, 0, 46, 0.692); 
+  box-shadow: 0 0 15px 8px rgba(255, 0, 140, 0.6);
   border-radius: 5px;
 
 }
@@ -570,8 +557,8 @@ li {
 
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(20, 34, 157, 0.692); /* Fondo celeste transparente */
-  box-shadow: 0 0 15px 8px rgba(18, 3, 129, 0.6); /* Humo celeste */
+  background-color: rgba(20, 34, 157, 0.692); 
+  box-shadow: 0 0 15px 8px rgba(18, 3, 129, 0.6); 
   border-radius: 5px;
 
 }
@@ -587,8 +574,8 @@ li {
  
     display: inline-block;
     padding: 5px 10px;
-    background-color: rgba(255, 0, 0, 0.692); /* Fondo celeste transparente */
-    box-shadow: 0 0 15px 8px rgba(241, 14, 10, 0.6); /* Humo celeste */
+    background-color: rgba(255, 0, 0, 0.692); 
+    box-shadow: 0 0 15px 8px rgba(241, 14, 10, 0.6); 
     border-radius: 5px;
   
    
@@ -599,8 +586,8 @@ li {
 
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(221, 7, 200, 0.692); /* Fondo celeste transparente */
-  box-shadow: 0 0 15px 8px rgba(241, 56, 177, 0.6); /* Humo celeste */
+  background-color: rgba(221, 7, 200, 0.692); 
+  box-shadow: 0 0 15px 8px rgba(241, 56, 177, 0.6); 
   border-radius: 5px;
 
 }
@@ -608,8 +595,8 @@ li {
 
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(5, 222, 246, 0.692); /* Fondo celeste transparente */
-  box-shadow: 0 0 15px 8px rgba(244, 10, 154, 0.6); /* Humo celeste */
+  background-color: rgba(5, 222, 246, 0.692); 
+  box-shadow: 0 0 15px 8px rgba(244, 10, 154, 0.6); 
   border-radius: 5px;
 
 }
@@ -617,8 +604,8 @@ li {
 
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(107, 4, 57, 0.692); /* Fondo celeste transparente */
-  box-shadow: 0 0 15px 8px rgba(3, 222, 25, 0.6); /* Humo celeste */
+  background-color: rgba(107, 4, 57, 0.692); 
+  box-shadow: 0 0 15px 8px rgba(3, 222, 25, 0.6); 
   border-radius: 5px;
 
 }
@@ -626,8 +613,8 @@ li {
 
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(2, 204, 211, 0.692); /* Fondo celeste transparente */
-  box-shadow: 0 0 15px 8px rgba(71, 83, 218, 0.6); /* Humo celeste */
+  background-color: rgba(2, 204, 211, 0.692); 
+  box-shadow: 0 0 15px 8px rgba(71, 83, 218, 0.6); 
   border-radius: 5px;
 
 }
@@ -635,16 +622,16 @@ li {
 
   display: inline-block;
   padding: 5px 10px;
-  background-color: rgba(178, 7, 221, 0.692); /* Fondo celeste transparente */
-  box-shadow: 0 0 15px 8px rgba(155, 56, 241, 0.6); /* Humo celeste */
+  background-color: rgba(178, 7, 221, 0.692); 
+  box-shadow: 0 0 15px 8px rgba(155, 56, 241, 0.6); 
   border-radius: 5px;
 
 }
 .Contact__link{
 
    padding: 5px 10px;
-  background-color: rgba(6, 226, 255, 0.692); /* Fondo celeste transparente */
-  box-shadow: 0 0 15px 8px rgba(75, 236, 233, 0.6); /* Humo celeste */
+  background-color: rgba(6, 226, 255, 0.692); 
+  box-shadow: 0 0 15px 8px rgba(75, 236, 233, 0.6); 
   border-radius: 5px;
 
 }
